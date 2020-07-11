@@ -7,13 +7,16 @@ class Welcome extends StatelessWidget {
     return Container(
     height: MediaQuery.of(context).size.height,
     width: MediaQuery.of(context).size.width,
-    decoration:BoxDecoration(gradient:LinearGradient(colors: [Colors.grey[900],Colors.grey[700],Colors.grey[500],Colors.grey[700],Colors.grey[900]],begin:Alignment.topCenter,end:Alignment.bottomCenter)),
+    color: Colors.grey[800],
     child:Column(
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      mainAxisAlignment: MainAxisAlignment.center,
       children:[
-        Row(mainAxisAlignment: MainAxisAlignment.center,children:[Text("a",style:TextStyle(fontSize :120,decoration:TextDecoration.none,color:Colors.orange)),Text("MBER",style:TextStyle(fontSize:70,decoration:TextDecoration.none,color:Colors.white))]),
-        Container(decoration:BoxDecoration(color:Colors.orange,borderRadius: BorderRadius.circular(20)),child:FlatButton(onPressed: (){},child: Text("Login / SignUp",style:TextStyle(fontSize:20,decoration:TextDecoration.none,color:Colors.white)),
-        ))]
+        Row(mainAxisAlignment: MainAxisAlignment.center,children:[Text("a",style:TextStyle(fontFamily: "Quicksand",fontSize :120,decoration:TextDecoration.none,color:Colors.orange)),Text("MBER",style:TextStyle(fontFamily: "Quicksand",fontSize:70,decoration:TextDecoration.none,color:Colors.white))]),
+        SizedBox(height:MediaQuery.of(context).size.height*0.5),
+        Container(decoration:BoxDecoration(color:Colors.orange,borderRadius: BorderRadius.circular(10)),width:MediaQuery.of(context).size.width-30,child:FlatButton(onPressed: (){Navigator.pushNamed(context, "Login");},child: Text("Login / SignUp",style:TextStyle(fontSize:20,decoration:TextDecoration.none,color:Colors.white)))),
+        SizedBox(height:10),
+        Text("Sign In Anonomously",style:TextStyle(color:Colors.white,fontSize: 16,fontWeight: FontWeight.w400,decoration: TextDecoration.none))
+        ]
     ));
   }
 }
